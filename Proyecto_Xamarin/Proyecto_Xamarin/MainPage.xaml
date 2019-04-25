@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Proyecto_Xamarin" 
+             x:Class="Proyecto_Xamarin.MainPage">
+  
+<StackLayout Padding="30" VerticalOptions="Center">
+        <Image Source="https://cdn3.iconfinder.com/data/icons/forall/110/chart-512.png" HeightRequest="50" WidthRequest="50"/>
+        <Label Text="CUENTAS ASOCIADAS" Font="Bold,18" HorizontalTextAlignment="Center" />
+
+        <ListView x:Name="CuentasList"
+              Grid.Row="4"  SeparatorVisibility="None" BackgroundColor="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="100">
+                        <StackLayout Padding="0"  VerticalOptions="Center"  >
+                            <Label  Text="{Binding CUE_DESCRIPCION_label}" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding CUE_SALDO_label}" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button  x:Name= "AdministrarCuenta" Text="Administrar Cuentas" TextColor="White" 
+                BackgroundColor="Teal" Clicked="AdministrarCuenta_Clicked"/>
+        <Button x:Name="AdministrarPagos" Text="Administrar Pagos" TextColor="White" 
+                BackgroundColor="DarkOrange" Clicked="AdministrarPagos_Clicked" />
+        <Button Text="Administrar Transferencias" TextColor="White" BackgroundColor="YellowGreen"
+             x:Name="btnAdministrarTransferencias" Clicked="BtnAdministrarTransferencias_Clicked" />
+        <Button  x:Name="CerrarSesion" Text="Cerrar Sesion" TextColor="White"
+                BackgroundColor="Maroon" Clicked="CerrarSesion_Clicked"/>
+    </StackLayout>
+</ContentPage>

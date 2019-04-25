@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Proyecto_Xamarin.Views.EssentialsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30" >
+           <ListView ItemsSource="{Binding}" BackgroundColor="AliceBlue" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                   <StackLayout Orientation="Vertical" HorizontalOptions="Fill">  
+                    <Label Text="{Binding DetalleModel}"  /> 
+                    <Label Text="{Binding DetalleManufacturer}" />
+                    <Label Text="{Binding DetalleDeviceName}" />
+                    <Label Text="{Binding DetalleVersion}" />
+                    <Label Text="{Binding DetallePlatform}" />
+                    <Label Text="{Binding DetalleIdiom}" />
+                    <Label Text="{Binding DetalleDeviceType}" />
+                </StackLayout>
+               </ViewCell> 
+             </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+ 
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

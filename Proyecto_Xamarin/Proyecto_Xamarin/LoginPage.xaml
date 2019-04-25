@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Proyecto_Xamarin.LoginPage">
+        <StackLayout BackgroundColor="Transparent" Padding="50" VerticalOptions="Center" 
+                     HorizontalOptions="Fill">
+        <Image Source="https://cdn2.iconfinder.com/data/icons/business-charts-red/512/growth_market_investment_acquisition_graph_finance_increase-512.png" HeightRequest="200" WidthRequest="200"/>
+        <Label Text="Banco Económico" Font="Bold,20" TextColor="DarkRed" HorizontalOptions="Center" FontSize="Large"/>
+            <Entry x:Name="txtUsername" Placeholder="Nombre de Usuario" HorizontalTextAlignment="Center" />
+            <Entry x:Name="txtPassword" Placeholder="Contraseña" IsPassword="true" 
+                   HorizontalTextAlignment="Center" />
+            <Button Text="Ingresar" BorderColor="Navy" TextColor="White" 
+                    BorderWidth="1" BackgroundColor="DarkRed"  Clicked="Button_Clicked"/>
+            <Label Text="" TextColor="Red" x:Name="lblError" />
+        </StackLayout>
+</ContentPage>

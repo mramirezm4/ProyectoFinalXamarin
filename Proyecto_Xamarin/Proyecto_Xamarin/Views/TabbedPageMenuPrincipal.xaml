@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Xamarin.Views.TabbedPageMenuPrincipal">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Agregar">
+
+        <ContentPage.Content>
+            <StackLayout Padding="30" VerticalOptions="Center">
+                <Image Source="https://cdn1.iconfinder.com/data/icons/hawcons/32/699313-icon-42-note-add-512.png" HeightRequest="50" WidthRequest="50"/>
+                <Entry x:Name="txtDescripcion" 
+                   Placeholder="Ingrese el número de cuenta" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtMoneda" 
+                   Placeholder="Ingrese moneda" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtSaldo" 
+                   Placeholder="Ingrese saldo" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                
+                
+                <Button x:Name="AgregarCuenta" Text="Agregar Cuenta" TextColor="White" 
+                BackgroundColor="DarkGreen"  Clicked="AgregarCuenta_Clicked"/>
+                <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" x:Name="Regresar" Clicked="Regresar_Clicked" />
+                
+               
+                
+            </StackLayout>
+     
+        </ContentPage.Content>
+
+    </ContentPage>
+    
+    
+    
+    
+  <ContentPage Title="Actualizar">
+
+        <ContentPage.Content>
+         
+            <StackLayout Padding="30" VerticalOptions="Center">
+                <Image Source="https://cdn1.iconfinder.com/data/icons/jetflat-multimedia-vol-4/90/0042_092_refresh_update_reload_sync_syncronization-512.png" HeightRequest="50" WidthRequest="50"/>
+                <Entry x:Name="txtCodigo" Placeholder="Ingrese el código de la cuenta" 
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtDescripcionMOD" 
+                   Placeholder="Número de cuenta" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtMonedaMOD" 
+                   Placeholder="Moneda" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="txtEstadoMOD" 
+                   Placeholder="Estado" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+
+
+                <Button x:Name="ActualizarCuenta" Text="Actualizar Cuenta" TextColor="White" 
+                BackgroundColor="DarkGreen" Clicked="ActualizarCuenta_Clicked"/>
+                <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" x:Name="RegresarMOD" Clicked="Regresar_Clicked" />
+                
+                
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+
+     
+    
+    
+    
+    <ContentPage Title="Eliminar">
+        <ContentPage.Content>
+
+            <StackLayout Padding="30" VerticalOptions="Center">
+                <Label Text="Favor seleccione la cuenta que desea eliminar" Font="Bold,18" HorizontalTextAlignment="Center" />
+                <Image Source="https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-5/512/Clipboard_copy_delete_minus_paste_remove-512.png" HeightRequest="50" WidthRequest="50"/>
+            
+                <ListView x:Name="CuentasListDelete"
+                 Grid.Row="4"  SeparatorVisibility="None" BackgroundColor="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="100">
+                                <StackLayout Padding="0"  VerticalOptions="Center"  >
+                                    <Label  Text="{Binding CUE_DESCRIPCION_label}" HorizontalTextAlignment="Center" />
+                                    <Label Text="{Binding CUE_SALDO_label}" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button x:Name="ElimiarCuenta" Text="Eliminar Cuenta" TextColor="White" 
+                BackgroundColor="DarkGreen" Clicked="ElimiarCuenta_Clicked"/>
+                <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" x:Name="RegresarEli" Clicked="Regresar_Clicked" />
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>

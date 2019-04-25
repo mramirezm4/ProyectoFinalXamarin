@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Proyecto_Xamarin.Views.PagosPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="30" >
+            <Label x:Name="txtBienvenida" Text="{Binding USU_}" HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center" />
+            <Label Text="Realizar pagos" HorizontalTextAlignment="Center" 
+                   HorizontalOptions="Fill"  />
+            <Picker x:Name="pkrServicios" Title="Seleccione un servicio" 
+                    HorizontalOptions="Fill"  ItemDisplayBinding="{Binding SER_DESCRIPCION_label}"/>
+            <Picker x:Name="pkrCuentas" Title="Seleccione una cuenta" 
+                    HorizontalOptions="Fill"  ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+            <Entry x:Name="txtMonto" Placeholder="Ingrese el monto" 
+                   HorizontalOptions="Fill" />
+            
+              <Button Text="Pagar" TextColor="White" 
+                BackgroundColor="Teal" />
+            
+           <Label x:Name="lblPagos" Text="Pagos realizados" HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center" />
+           
+            <ListView x:Name="PagosListView"
+              Grid.Row="4" SeparatorVisibility="None" BackgroundColor="Silver">     
+           <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell Height="30">
+                <StackLayout Padding="5">
+                  <Label  Text="{Binding PAG_DESCRIPCION}" />
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+            
+          
+              <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" Clicked="Handle_Clicked_1" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
