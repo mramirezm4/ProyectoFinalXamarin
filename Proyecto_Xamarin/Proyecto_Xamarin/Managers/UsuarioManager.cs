@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,19 +57,5 @@ namespace Proyecto_Xamarin.Managers
             }
         }
 
-        public async Task<Usuario> Registrar(Usuario usuario)
-        {
-
-            HttpClient client = new HttpClient();
-            var response = await client.PostAsync(UrlRegister,
-                new StringContent(JsonConvert.SerializeObject(usuario),
-                Encoding.UTF8, "application/json"));
-
-            return JsonConvert.DeserializeObject<Usuario>(await response.Content.ReadAsStringAsync());
-        }
-
-        public UsuarioManager()
-        {
-        }
     }
 }
