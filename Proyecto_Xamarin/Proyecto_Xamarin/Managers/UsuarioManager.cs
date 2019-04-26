@@ -9,16 +9,16 @@ namespace Proyecto_Xamarin.Managers
 {
     public class UsuarioManager
     {
+        const string URL_BASE = "https://www.gruposama.com/WebApiSecureSAMA/api/LoginExt/";
+
         //const string UrlRegister = "http://localhost:56485/api/login/Register/";
         //const string URLUpdate = "http://localhost:56485/api/login/Update/";
         //const string URLTraerPagosUser = "http://localhost:56485/api/login/";
         //const string URLTraerInformacionUser = "http://localhost:56485/api/login/Informacion/";
 
-        const string UrlAuthenticate = "http://192.168.0.7:45455/api/login/authenticate/";
-        const string UrlRegister = "http://192.168.0.7:45455/api/login/Register/";
-        const string URLUpdate = "http://192.168.0.7:45455/api/login/Update/";
-        const string URLTraerPagosUser = "http://192.168.0.7:45455/api/login/";
-        const string URLTraerInformacionUser = "http://192.168.0.7:45455/api/login/Informacion/";
+        const string UrlAuthenticate = URL_BASE+"authenticate/";
+        const string UrlRegister = URL_BASE + "Register/";
+//        const string URLUpdate = URL_BASE + "Update/";
 
 
        

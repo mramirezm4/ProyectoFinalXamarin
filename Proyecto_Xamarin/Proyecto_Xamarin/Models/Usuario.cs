@@ -17,8 +17,8 @@ namespace Proyecto_Xamarin.Models
         //public SecurityToken Token { get; set; }
         //public string TOKEN { get; set; }
 
-        public SecurityToken TOKEN { get; set; }
-        public string CADENATOKEN { get; set; }
+        public SecurityToken Token { get; set; }
+        public string TOKEN { get; set; }
 
         public Usuario()
         {

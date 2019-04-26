@@ -45,9 +45,9 @@ namespace Proyecto_Xamarin
 
                             //obtener datos del token
                             var jwtHandler = new JwtSecurityTokenHandler();
-                            JwtSecurityToken URLTOKEN = jwtHandler.ReadJwtToken(App.UsuarioActual.CADENATOKEN);
+                            JwtSecurityToken URLTOKEN = jwtHandler.ReadJwtToken(App.UsuarioActual.TOKEN);
 
-                            App.UsuarioActual.TOKEN = URLTOKEN;
+                            App.UsuarioActual.Token = URLTOKEN;
 
                             await DisplayAlert("Banco Económico", App.UsuarioActual.USU_NOMBRE + " Bienvenid@ a su Banco en Línea!!", "Ok");
 
