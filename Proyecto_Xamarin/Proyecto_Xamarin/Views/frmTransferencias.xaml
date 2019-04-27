@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Xamarin.Views.frmTransferencias">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Realizar Transferencia" >
+
+        <ContentPage.Content>
+            <StackLayout Padding="30" VerticalOptions="Center">
+                <Image Source="https://cdn1.iconfinder.com/data/icons/hawcons/32/699313-icon-42-note-add-512.png" HeightRequest="50" WidthRequest="50"/>
+                <Entry x:Name="txtCuentaOrigen" 
+                   Placeholder="Ingrese cuenta origen" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtCuentaDestino" 
+                   Placeholder="Ingrese cuenta destino" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtMonto" 
+                   Placeholder="Ingrese monto" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Entry x:Name="txtDescripcion"
+                   Placeholder="Ingrese detalle"
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
+
+
+                <Button x:Name="btnTransferirFondos" Text="Transferir" TextColor="White" Clicked="BtnTransferirFondos_Clicked"
+                BackgroundColor="DarkGreen"  />
+                <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" x:Name="Regresar" />
+
+
+
+            </StackLayout>
+
+        </ContentPage.Content>
+
+
+    </ContentPage >
+    <ContentPage Title="Listar transferencias">
+
+        <ContentPage.Content>
+            <StackLayout Padding="30" VerticalOptions="Center">
+                <Image Source="https://cdn1.iconfinder.com/data/icons/hawcons/32/699313-icon-42-note-add-512.png" HeightRequest="50" WidthRequest="50"/>
+                <Label x:Name="lblPagos" Text="Transferencias realizadas" HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center" />
+
+                <ListView x:Name="ListViewTransferencias"
+              Grid.Row="4" SeparatorVisibility="None" BackgroundColor="Silver">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="30">
+                                <StackLayout Padding="5">
+                                    <Label  Text="{Binding TRA_CUENTA_ORIGEN}" />
+                                    <Label  Text="{Binding TRA_CUENTA_DESTINO}" />
+                                    <Label  Text="{Binding TRA_MONTO}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Button Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" x:Name="btnTranRegresar" Clicked="BtnTranRegresar_Clicked"/>
+
+
+
+            </StackLayout>
+
+        </ContentPage.Content>
+
+    </ContentPage>
+
+</TabbedPage>
