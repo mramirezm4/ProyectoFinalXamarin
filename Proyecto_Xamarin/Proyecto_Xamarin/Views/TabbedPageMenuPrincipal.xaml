@@ -2,7 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_Xamarin.Views.TabbedPageMenuPrincipal">
-  <!--Pages can be added as references or inline-->
+    <!--Pages can be added as references or inline-->
     <ContentPage Title="Agregar">
 
         <ContentPage.Content>
@@ -17,28 +17,28 @@
                 <Entry x:Name="txtSaldo" 
                    Placeholder="Ingrese saldo" 
                    HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
-                
-                
+
+
                 <Button x:Name="AgregarCuenta" Text="Agregar Cuenta" TextColor="White" 
                 BackgroundColor="DarkGreen"  Clicked="AgregarCuenta_Clicked"/>
                 <Button Text="Regresar" TextColor="White" 
                 BackgroundColor="Maroon" x:Name="Regresar" Clicked="Regresar_Clicked" />
-                
-               
-                
+
+
+
             </StackLayout>
-     
+
         </ContentPage.Content>
 
     </ContentPage>
-    
-    
-    
-    
-  <ContentPage Title="Actualizar">
+
+
+
+
+    <ContentPage Title="Actualizar">
 
         <ContentPage.Content>
-         
+
             <StackLayout Padding="30" VerticalOptions="Center">
                 <Image Source="https://cdn1.iconfinder.com/data/icons/jetflat-multimedia-vol-4/90/0042_092_refresh_update_reload_sync_syncronization-512.png" HeightRequest="50" WidthRequest="50"/>
                 <Entry x:Name="txtCodigo" Placeholder="Ingrese el código de la cuenta" 
@@ -49,6 +49,10 @@
                 <Entry x:Name="txtMonedaMOD" 
                    Placeholder="Moneda" 
                    HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="txtSaldoMOD" 
+                   Placeholder="Saldo" 
+                   HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center"/>
+
                 <Entry x:Name="txtEstadoMOD" 
                    Placeholder="Estado" 
                    HorizontalOptions="Center" FontSize="Large" HorizontalTextAlignment="Center" />
@@ -58,24 +62,24 @@
                 BackgroundColor="DarkGreen" Clicked="ActualizarCuenta_Clicked"/>
                 <Button Text="Regresar" TextColor="White" 
                 BackgroundColor="Maroon" x:Name="RegresarMOD" Clicked="Regresar_Clicked" />
-                
-                
+
+
             </StackLayout>
 
         </ContentPage.Content>
     </ContentPage>
 
-     
-    
-    
-    
+
+
+
+
     <ContentPage Title="Eliminar">
         <ContentPage.Content>
 
             <StackLayout Padding="30" VerticalOptions="Center">
                 <Label Text="Favor seleccione la cuenta que desea eliminar" Font="Bold,18" HorizontalTextAlignment="Center" />
                 <Image Source="https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-5/512/Clipboard_copy_delete_minus_paste_remove-512.png" HeightRequest="50" WidthRequest="50"/>
-            
+
                 <ListView x:Name="CuentasListDelete"
                  Grid.Row="4"  SeparatorVisibility="None" BackgroundColor="Transparent">
                     <ListView.ItemTemplate>
@@ -99,3 +103,4 @@
     </ContentPage>
 
 </TabbedPage>
+    

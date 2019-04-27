@@ -16,7 +16,7 @@ namespace Proyecto_Xamarin.Views
         Dispositivo Dispositivo = new Dispositivo();
         CuentaManager eCuentaManager = new CuentaManager();
 
-        public TabbedPageMenuPrincipal ()
+        public TabbedPageMenuPrincipal()
         {
             InitializeComponent();
             CargarListaCuentas();
@@ -84,8 +84,8 @@ namespace Proyecto_Xamarin.Views
                 await DisplayAlert("Banco Económico", "No existe conexión a Internet", "Ok");
 
             }
-       }
-    
+        }
+
 
         private void Regresar_Clicked(object sender, EventArgs e)
         {
@@ -102,7 +102,7 @@ namespace Proyecto_Xamarin.Views
         }
 
 
-         public Boolean ValidarCampos()
+        public Boolean ValidarCampos()
         {
             Boolean Correcto = true;
             try
@@ -125,7 +125,7 @@ namespace Proyecto_Xamarin.Views
 
         }
 
-       async private void ActualizarCuenta_Clicked(object sender, EventArgs e)
+        async private void ActualizarCuenta_Clicked(object sender, EventArgs e)
         {
             if (Dispositivo.ValidarConexionInternet())
             {
@@ -140,7 +140,9 @@ namespace Proyecto_Xamarin.Views
                         CUE_DESCRIPCION = txtDescripcionMOD.Text,
                         CUE_MONEDA = txtMonedaMOD.Text,
                         CUE_ESTADO = txtEstadoMOD.Text,
+                        CUE_SALDO = Convert.ToDecimal(txtSaldoMOD.Text),
                         USU_CODIGO = App.UsuarioActual.USU_CODIGO
+
                     };
 
                     eCuentaIngresada = await eCuentaManager.Actualizar(eCuenta);
@@ -150,6 +152,7 @@ namespace Proyecto_Xamarin.Views
                         txtMonedaMOD.Text = string.Empty;
                         txtDescripcionMOD.Text = string.Empty;
                         txtEstadoMOD.Text = string.Empty;
+                        txtSaldoMOD.Text = string.Empty;
                         txtCodigo.Text = string.Empty;
 
                         await DisplayAlert("Información", "Cuenta Actualizada Correctamente", "Ok");
@@ -178,7 +181,7 @@ namespace Proyecto_Xamarin.Views
             try
             {
 
-                if (string.IsNullOrEmpty(txtDescripcionMOD.Text) || string.IsNullOrEmpty(txtMonedaMOD.Text) || string.IsNullOrEmpty(txtEstadoMOD.Text))
+                if (string.IsNullOrEmpty(txtDescripcionMOD.Text) || string.IsNullOrEmpty(txtMonedaMOD.Text) || string.IsNullOrEmpty(txtEstadoMOD.Text) || string.IsNullOrEmpty(txtSaldoMOD.Text))
                 {
 
                     Correcto = false;

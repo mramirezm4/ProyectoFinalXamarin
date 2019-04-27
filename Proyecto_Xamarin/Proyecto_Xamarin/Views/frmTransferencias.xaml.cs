@@ -53,7 +53,8 @@ namespace Proyecto_Xamarin.Views
             }
         }
 
-        async private void LoadData() {
+        async private void LoadData()
+        {
 
 
             trans = await tranManager.GetTransferencias();
@@ -61,6 +62,11 @@ namespace Proyecto_Xamarin.Views
         }
 
         private void BtnTranRegresar_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
+        }
+
+        private void Regresar_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new MainPage();
         }

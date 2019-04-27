@@ -2,7 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_Xamarin.Views.frmTransferencias">
-  <!--Pages can be added as references or inline-->
+    <!--Pages can be added as references or inline-->
     <ContentPage Title="Realizar Transferencia" >
 
         <ContentPage.Content>
@@ -25,7 +25,7 @@
                 <Button x:Name="btnTransferirFondos" Text="Transferir" TextColor="White" Clicked="BtnTransferirFondos_Clicked"
                 BackgroundColor="DarkGreen"  />
                 <Button Text="Regresar" TextColor="White" 
-                BackgroundColor="Maroon" x:Name="Regresar" />
+                BackgroundColor="Maroon" x:Name="Regresar" Clicked="Regresar_Clicked"/>
 
 
 
@@ -57,7 +57,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                
+
                 <Button Text="Regresar" TextColor="White" 
                 BackgroundColor="Maroon" x:Name="btnTranRegresar" Clicked="BtnTranRegresar_Clicked"/>
 

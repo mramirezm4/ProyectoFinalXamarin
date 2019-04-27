@@ -63,6 +63,6 @@ namespace Proyecto_Xamarin.Managers
             return JsonConvert.DeserializeObject<string>(await
             response.Content.ReadAsStringAsync());
         }
-      
+
     }
 }
