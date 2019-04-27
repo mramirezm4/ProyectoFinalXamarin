@@ -9,15 +9,15 @@ namespace Proyecto_Xamarin.Managers
 {
     public class UsuarioManager
     {
-        const string URL_BASE = "https://www.gruposama.com/WebApiSecureSAMA/api/LoginExt/";
+        const string URL_BASE = "https://www.gruposama.com/WebApiSecureSAMA/api/";
 
         //const string UrlRegister = "http://localhost:56485/api/login/Register/";
         //const string URLUpdate = "http://localhost:56485/api/login/Update/";
         //const string URLTraerPagosUser = "http://localhost:56485/api/login/";
         //const string URLTraerInformacionUser = "http://localhost:56485/api/login/Informacion/";
 
-        const string UrlAuthenticate = URL_BASE+"authenticate/";
-        const string UrlRegister = URL_BASE + "Register/";
+        const string UrlAuthenticate = URL_BASE+ "LoginExt/authenticate/";
+        const string UrlRegister = URL_BASE + "Login/Register/";
 //        const string URLUpdate = URL_BASE + "Update/";
 
 
@@ -56,6 +56,39 @@ namespace Proyecto_Xamarin.Managers
                 throw ex;
             }
         }
+
+
+
+        public async Task<Usuario> Registrar(Usuario usuario)
+        {
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                //ASYNC
+                //serealizamos la clase para enviarla, se utiliza await para esperar la respuesta asincronica
+                var response = await httpClient.PostAsync(UrlRegister,
+                    new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json"));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    //devolvemos la clase deserealizada
+                    return JsonConvert.DeserializeObject<Usuario>(await response.Content.ReadAsStringAsync());
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
 
     }
 }

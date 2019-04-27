@@ -24,8 +24,8 @@ namespace Proyecto_Xamarin
         {
             if (dispositivo.ValidarConexionInternet())
             {
-                IEnumerable<Cuenta> cuentas = await
-                eCuentaManager.GetCuentas(App.UsuarioActual.USU_CODIGO.ToString());
+                IEnumerable<Cuenta> cuentas = await 
+                    eCuentaManager.GetCuentas(App.UsuarioActual.USU_CODIGO.ToString());
 
                 CuentasList.ItemsSource = cuentas;
                 CuentasList.BindingContext = cuentas;
@@ -39,17 +39,21 @@ namespace Proyecto_Xamarin
 
         private void AdministrarCuenta_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Views.TabbedPageMenuPrincipal();
+            //Application.Current.MainPage = new Views.TabbedPageMenuPrincipal();
+            Navigation.PushModalAsync(new Views.TabbedPageMenuPrincipal());
+            CargarListaCuentas();
         }
 
         private void AdministrarPagos_Clicked(object sender, EventArgs e)
         {
-
+            //Application.Current.MainPage = new Views.PagosPage();
+            Navigation.PushModalAsync(new Views.PagosPage());
+            CargarListaCuentas();
         }
 
         private void BtnAdministrarTransferencias_Clicked(object sender, EventArgs e)
         {
-
+            
         }
 
       async  private void CerrarSesion_Clicked(object sender, EventArgs e)

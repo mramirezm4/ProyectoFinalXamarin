@@ -6,15 +6,18 @@
                    HorizontalTextAlignment="Center" />
             <Label Text="Realizar pagos" HorizontalTextAlignment="Center" 
                    HorizontalOptions="Fill"  />
-            <Picker x:Name="pkrServicios" Title="Seleccione un servicio" 
-                    HorizontalOptions="Fill"  ItemDisplayBinding="{Binding SER_DESCRIPCION_label}"/>
+            <Picker x:Name="pkrServicios"   Title="Seleccione el servicio" 
+                    HorizontalOptions="Fill"  ItemDisplayBinding="{Binding SER_DESCRIPCION_label} "/>
+
             <Picker x:Name="pkrCuentas" Title="Seleccione una cuenta" 
-                    HorizontalOptions="Fill"  ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+                    HorizontalOptions="Fill" 
+                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"/>
+
             <Entry x:Name="txtMonto" Placeholder="Ingrese el monto" 
                    HorizontalOptions="Fill" />
             
-              <Button Text="Pagar" TextColor="White" 
-                BackgroundColor="Teal" />
+              <Button x:Name="btnPagar" Text="Pagar" TextColor="White" 
+                BackgroundColor="Teal" Clicked="btnPagar_Clicked" />
             
            <Label x:Name="lblPagos" Text="Pagos realizados" HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center" />
@@ -31,10 +34,10 @@
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>
-            
-          
-              <Button Text="Regresar" TextColor="White" 
-                BackgroundColor="Maroon" Clicked="Handle_Clicked_1" />
+
+
+            <Button x:Name="btnRegresar" Text="Regresar" TextColor="White" 
+                BackgroundColor="Maroon" Clicked="btnRegresar_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

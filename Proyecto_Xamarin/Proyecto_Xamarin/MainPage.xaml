@@ -9,19 +9,21 @@
         <Image Source="https://cdn3.iconfinder.com/data/icons/forall/110/chart-512.png" HeightRequest="50" WidthRequest="50"/>
         <Label Text="CUENTAS ASOCIADAS" Font="Bold,18" HorizontalTextAlignment="Center" />
 
-        <ListView x:Name="CuentasList"
+       <ListView x:Name="CuentasList"
               Grid.Row="4"  SeparatorVisibility="None" BackgroundColor="Transparent">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell Height="100">
+                    <ViewCell Height="45">
                         <StackLayout Padding="0"  VerticalOptions="Center"  >
-                            <Label  Text="{Binding CUE_DESCRIPCION_label}" HorizontalTextAlignment="Center" />
-                            <Label Text="{Binding CUE_SALDO_label}" HorizontalTextAlignment="Center"/>
+                            <Label HeightRequest="20" Text="{Binding CUE_DESCRIPCION_label}" HorizontalTextAlignment="Start" VerticalOptions="End" />
+                            <Label Text="{Binding CUE_SALDO_label}" HorizontalTextAlignment="Center" VerticalOptions="End" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView> 
+
+
         <Button  x:Name= "AdministrarCuenta" Text="Administrar Cuentas" TextColor="White" 
                 BackgroundColor="Teal" Clicked="AdministrarCuenta_Clicked"/>
         <Button x:Name="AdministrarPagos" Text="Administrar Pagos" TextColor="White" 

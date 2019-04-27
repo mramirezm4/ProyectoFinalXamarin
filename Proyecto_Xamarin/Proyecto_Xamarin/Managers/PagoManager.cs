@@ -10,8 +10,8 @@ namespace Proyecto_Xamarin.Managers
 {
     public class PagoManager
     {
-        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/pago/"; // U
-        const string UrlIngresar = "https://www.gruposama.com/WebApiSecureSAMA/api/pago/ingresar/"; // U
+        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/pago/";
+        const string UrlIngresar = Url + "ingresar/";
 
         public async Task<IEnumerable<Pago>> GetPagos()
         {

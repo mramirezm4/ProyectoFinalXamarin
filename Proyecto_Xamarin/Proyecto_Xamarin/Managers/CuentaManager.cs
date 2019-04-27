@@ -10,10 +10,16 @@ namespace Proyecto_Xamarin.Managers
 {
     public class CuentaManager
     {
-        const string Url = "http://192.168.0.7:45455/api/Cuenta/";
-        const string UrlIngresar = "http://192.168.0.7:45455/api/cuenta/ingresarCuenta/";
-        const string UrlUpdate = "http://192.168.0.7:45455/api/cuenta/Update/";
-        const string UrlEliminar = "http://192.168.0.7:45455/api/cuenta/Delete/";
+
+        //const string Url = "http://192.168.0.7:45455/api/Cuenta/";
+        //const string UrlIngresar = "http://192.168.0.7:45455/api/cuenta/ingresarCuenta/";
+        //const string UrlUpdate = "http://192.168.0.7:45455/api/cuenta/Update/";
+        ///const string UrlEliminar = "http://192.168.0.7:45455/api/cuenta/Delete/";
+
+        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/";
+        const string UrlIngresar = Url + "ingresar/";
+        const string UrlUpdate = Url;
+        const string UrlEliminar = Url ;
 
 
         public async Task<IEnumerable<Cuenta>> GetCuentas(string id)
@@ -49,11 +55,11 @@ namespace Proyecto_Xamarin.Managers
             response.Content.ReadAsStringAsync());
         }
 
-        public async Task<string> Eliminar(string id)
+        public async Task<string> Eliminar(string Cuenta_id)
         {
 
             HttpClient client = new HttpClient();
-            var response = await client.DeleteAsync(UrlEliminar + id);
+            var response = await client.DeleteAsync(UrlEliminar + Cuenta_id);
 
             return JsonConvert.DeserializeObject<string>(await
             response.Content.ReadAsStringAsync());

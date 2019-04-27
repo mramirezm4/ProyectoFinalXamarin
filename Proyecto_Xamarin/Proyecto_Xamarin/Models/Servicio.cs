@@ -3,7 +3,7 @@ namespace Proyecto_Xamarin.Models
 {
     public class Servicio
     {
-        public string SER_CODIGO { get; set; }
+        public int SER_CODIGO { get; set; }
         public string SER_DESCRIPCION { get; set; }
         public string SER_ESTADO { get; set; }
 
