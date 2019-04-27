@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Proyecto_Xamarin.Models
@@ -14,11 +14,10 @@ namespace Proyecto_Xamarin.Models
         public DateTime USU_FEC_NAC { get; set; }
         public string USU_ESTADO { get; set; }
 
-        //public SecurityToken Token { get; set; }
-        //public string TOKEN { get; set; }
 
         public SecurityToken Token { get; set; }
         public string TOKEN { get; set; }
+
 
         public Usuario()
         {
