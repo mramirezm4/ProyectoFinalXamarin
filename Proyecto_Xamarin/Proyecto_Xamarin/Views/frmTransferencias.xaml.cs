@@ -43,7 +43,7 @@ namespace Proyecto_Xamarin.Views
 
                 TransferenciaManager registrarTrans = new TransferenciaManager();
                 Transferencia transRegistrada = await registrarTrans.Ingresar(nueva_trans);
-
+                LoadData();
 
             }
 

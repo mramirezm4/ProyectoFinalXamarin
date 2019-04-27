@@ -44,14 +44,14 @@
                    HorizontalTextAlignment="Center" />
 
                 <ListView x:Name="ListViewTransferencias"
-              Grid.Row="4" SeparatorVisibility="None" BackgroundColor="Silver">
+              Grid.Row="4" SeparatorVisibility="None" BackgroundColor="Silver" RowHeight="60">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell Height="30">
-                                <StackLayout Padding="5">
-                                    <Label  Text="{Binding TRA_CUENTA_ORIGEN}" />
-                                    <Label  Text="{Binding TRA_CUENTA_DESTINO}" />
-                                    <Label  Text="{Binding TRA_MONTO}" />
+                            <ViewCell Height="40">
+                                <StackLayout Padding="2">
+                                    <Label  Text="{Binding TRA_CUENTA_ORIGEN_label}" />
+                                    <Label  VerticalTextAlignment="Start" Text="{Binding TRA_CUENTA_DESTINO_label}" />
+                                    <!--Label  Text="{Binding TRA_MONTO}" /> -->
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
