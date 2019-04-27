@@ -53,7 +53,7 @@ namespace Proyecto_Xamarin
 
         private void BtnAdministrarTransferencias_Clicked(object sender, EventArgs e)
         {
-            
+            Application.Current.MainPage = new Views.frmTransferencias();
         }
 
       async  private void CerrarSesion_Clicked(object sender, EventArgs e)

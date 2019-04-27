@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -10,17 +10,16 @@ namespace Proyecto_Xamarin.Managers
 {
     public class CuentaManager
     {
-
         //const string Url = "http://192.168.0.7:45455/api/Cuenta/";
+
         //const string UrlIngresar = "http://192.168.0.7:45455/api/cuenta/ingresarCuenta/";
         //const string UrlUpdate = "http://192.168.0.7:45455/api/cuenta/Update/";
-        ///const string UrlEliminar = "http://192.168.0.7:45455/api/cuenta/Delete/";
+        //const string UrlEliminar = "http://192.168.0.7:45455/api/cuenta/Delete/";
 
-        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/";
-        const string UrlIngresar = Url + "ingresar/";
-        const string UrlUpdate = Url;
-        const string UrlEliminar = Url ;
-
+        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/"; // U
+        const string UrlIngresar = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/ingresar/";
+        const string UrlUpdate = "https://www.gruposama.com/WebApiSecureSAMA/api/Cuenta/";
+        const string UrlEliminar = "https://www.gruposama.com/WebApiSecureSAMA/api/Cuenta/";
 
         public async Task<IEnumerable<Cuenta>> GetCuentas(string id)
         {
@@ -55,11 +54,11 @@ namespace Proyecto_Xamarin.Managers
             response.Content.ReadAsStringAsync());
         }
 
-        public async Task<string> Eliminar(string Cuenta_id)
+        public async Task<string> Eliminar(string id)
         {
 
             HttpClient client = new HttpClient();
-            var response = await client.DeleteAsync(UrlEliminar + Cuenta_id);
+            var response = await client.DeleteAsync(UrlEliminar + id);
 
             return JsonConvert.DeserializeObject<string>(await
             response.Content.ReadAsStringAsync());
